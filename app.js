@@ -2,19 +2,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const { Pool} = require('pg')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
 
-const { Pool, Client } = require('pg')
 const pool = new Pool({
-  user: 'dbuser',
-  host: 'database.server.com',
-  database: 'mydb',
-  password: 'secretpassword',
-  port: 3211,
+  user: 'postgres',
+  host: 'localhost',
+  database: 'condb',
+  password: 'kucing',
+  port: 5432,
 })
 pool.query('SELECT NOW()', (err, res) => {
   console.log(err, res)
