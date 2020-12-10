@@ -10,10 +10,10 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
+  user: '######',
+  host: '#######',
   database: 'condb',
-  password: 'kucing',
+  password: '####',
   port: 5432,
 })
 pool.query('SELECT NOW()', (err, res) => {
